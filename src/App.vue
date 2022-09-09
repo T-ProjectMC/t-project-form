@@ -1,7 +1,25 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+</script>
+
+<script lang="ts">
+import Vue from "vue";
+import { getDatabase, ref, child, get, onValue } from "firebase/database";
+export default {
+  created() {
+    window.addEventListener("beforeunload", this.confirmSave);
+  },
+  destroyed() {
+    window.removeEventListener("beforeunload", this.confirmSave);
+  },
+  methods: {
+    confirmSave(event) {
+      event.returnValue = "編集中のものは保存されませんが、よろしいですか？";
+    },
+  },
+};
 </script>
 
 <template>
