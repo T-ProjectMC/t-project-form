@@ -18,6 +18,21 @@ const routes = [
       }
     },
   },
+  {
+    path: "/t-project-form/",
+    name: "Dashboard",
+    component: HelloWorld,
+    beforeRouteLeave: function (to, from, next) {
+      const answer = window.confirm(
+        "編集中のものは保存されませんが、よろしいですか？"
+      );
+      if (answer) {
+        next();
+      } else {
+        next(false);
+      }
+    },
+  },
 ];
 
 const router = createRouter({
