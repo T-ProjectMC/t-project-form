@@ -8,11 +8,13 @@ import HelloWorld from "./components/HelloWorld.vue";
 import Vue from "vue";
 import { getDatabase, ref, child, get, onValue } from "firebase/database";
 export default {
-  created() {
+  mounted() {
     window.addEventListener("beforeunload", this.confirmSave);
+    window.addEventListener("popstate", this.confirmSave);
   },
   destroyed() {
     window.removeEventListener("beforeunload", this.confirmSave);
+    window.removeEventListener("popstate", this.confirmSave);
   },
   methods: {
     confirmSave(event) {
