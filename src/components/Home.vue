@@ -8,7 +8,10 @@
           class="my-2 mx-auto"
         >
           <div v-for="parts in section.parts">
-            <v-toolbar v-if="parts.tag == 'header'" class="bg-teal-accent-3">
+            <v-toolbar
+              v-if="parts.tag == 'header'"
+              class="bg-teal-accent-3 header"
+            >
               <v-card-title>{{ parts.text }}</v-card-title>
             </v-toolbar>
             <v-card-title v-if="parts.tag == 'title'">
@@ -143,5 +146,9 @@ export default defineComponent({
   &-outline {
     padding-top: 5px;
   }
+}
+.header {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 </style>
