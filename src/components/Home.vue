@@ -93,7 +93,7 @@ export default defineComponent({
   },
   methods: {
     getQuestion: async function () {
-      const querySnapshot = await getDocs(collection(db, "question"));
+      const querySnapshot = await getDocs(collection(db, "questions"));
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
         console.dir(doc.data());
