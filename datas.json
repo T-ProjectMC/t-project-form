@@ -1,0 +1,129 @@
+[
+  {
+    "__id__": "0",
+    "section": [
+      {
+        "parts": [
+          {
+            "tag": "title",
+            "type": "",
+            "text": "メールアドレス",
+            "required": true
+          },
+          {
+            "tag": "input",
+            "type": "mail",
+            "id": "e-mail",
+            "placeholder": "xxxxxxxxx@gmail.com",
+            "required": true
+          }
+        ]
+      },
+      {
+        "parts": [
+          {
+            "tag": "label",
+            "type": "",
+            "text": "《応募時の注意事項/募集条件》"
+          },
+          {
+            "tag": "label",
+            "type": "",
+            "text": "《応募時の注意事項/募集条件》"
+          },
+          {
+            "tag": "list",
+            "type": "",
+            "list": [
+              "メールアドレスをお持ちの方。\nメールアドレスは自動返信・面接曜日のお知らせのみに使用されます。",
+              "現在の年齢が13歳以上の方。",
+              "長期で積極的にご活躍いただける方。",
+              "Minecraft Java Editionの正規アカウントをお持ちの方。",
+              "Discord/Twitterのアカウントをお持ちの方。",
+              "完全にボランティア活動であることを前提に報酬が生じないことを了承いただける方。",
+              "自分の技能がきちんと証明できる方。",
+              "過去にT-ProjectBANSystemにBANされていない方。"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "__id__": "1",
+    "section": [
+      {
+        "parts": [
+          {
+            "tag": "header",
+            "type": "",
+            "text": "基本情報",
+            "required": false
+          },
+          {
+            "tag": "title",
+            "type": "",
+            "text": "お名前",
+            "required": true
+          },
+          {
+            "tag": "label",
+            "type": "",
+            "text": "運営チーム内で呼んでほしい名前を記入してください。(英語だったり通常の読み方ではない場合はひらがなやカタカナにしてください)"
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "id": "user_name",
+            "placeholder": "とどめん",
+            "required": true
+          }
+        ]
+      },
+      {
+        "parts": [
+          {
+            "tag": "title",
+            "type": "",
+            "text": "TwitterID",
+            "required": true
+          },
+          {
+            "tag": "label",
+            "type": "",
+            "text": "URLもしくは@○○○の形式で記入してください。"
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "id": "twitter_id",
+            "placeholder": "@xxxxxxxx or https://twitter.com/xxxxxx",
+            "required": true
+          }
+        ]
+      },
+      {
+        "parts": [
+          {
+            "tag": "title",
+            "type": "",
+            "text": "DiscordID",
+            "required": true
+          },
+          {
+            "tag": "label",
+            "type": "",
+            "text": "山田太郎#0000の形式で記入してください。"
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "id": "discord_id",
+            "placeholder": "山田太郎#0000",
+            "required": true
+          }
+        ]
+      }
+    ]
+  }
+]
