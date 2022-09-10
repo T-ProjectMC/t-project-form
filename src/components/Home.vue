@@ -14,7 +14,10 @@
             >
               <v-card-title>{{ parts.text }}</v-card-title>
             </v-toolbar>
-            <v-card-title v-if="parts.tag == 'title'">
+            <v-card-title
+              v-if="parts.tag == 'title'"
+              style="word-break: break-word"
+            >
               {{ parts.text }}
             </v-card-title>
             <v-card-text v-if="parts.tag == 'label'">
@@ -150,5 +153,14 @@ export default defineComponent({
 .header {
   overflow-wrap: break-word;
   word-break: break-word;
+}
+.title {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  overflow: inherit;
+}
+.v-card-title {
+  word-break: normal !important;
+  white-space: normal !important;
 }
 </style>
