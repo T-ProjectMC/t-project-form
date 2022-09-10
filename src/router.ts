@@ -1,12 +1,12 @@
 import Vue from "vue";
 import { createRouter, createWebHistory } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
+import Home from "./components/Home.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Dashboard",
-    component: HelloWorld,
+    name: "Home",
+    component: Home,
     beforeRouteLeave: function (to, from, next) {
       const answer = window.confirm(
         "編集中のものは保存されませんが、よろしいですか？"
@@ -20,8 +20,8 @@ const routes = [
   },
   {
     path: "/t-project-form/",
-    name: "Dashboard",
-    component: HelloWorld,
+    name: "Home",
+    component: Home,
     beforeRouteLeave: function (to, from, next) {
       const answer = window.confirm(
         "編集中のものは保存されませんが、よろしいですか？"

@@ -5,6 +5,12 @@ defineProps<{ msg: string }>();
 
 const count = ref(0);
 </script>
+<script lang="ts">
+import Vue from "vue";
+export default {
+  name: "Home",
+};
+</script>
 
 <template>
   <h1>{{ msg }}</h1>
