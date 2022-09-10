@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main>
+    <v-main class="main">
       <HelloWorld />
     </v-main>
   </v-app>
@@ -36,3 +36,8 @@ export default defineComponent({
   },
 });
 </script>
+<style lang="scss">
+.main {
+  background-color: #fafafa;
+}
+</style>

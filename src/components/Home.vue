@@ -69,7 +69,42 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row v-for="(elem, index) in this.questions"> </v-row>
+    <v-row v-for="question in this.questions" justify="center" class="my-5">
+      <v-col justify="center">
+        <v-card
+          v-for="section in question.section"
+          :width="card_width"
+          class="my-2 mx-auto"
+        >
+          <div v-for="parts in section.parts">
+            <v-toolbar v-if="parts.tag == 'header'" class="bg-teal-accent-3">
+              <v-card-title>{{ parts.text }}</v-card-title>
+            </v-toolbar>
+            <v-card-title v-if="parts.tag == 'title'">
+              {{ parts.text }}
+            </v-card-title>
+            <v-card-text v-if="parts.tag == 'label'">
+              {{ parts.text }}
+            </v-card-text>
+            <v-card-item v-if="parts.tag == 'input'">
+              <v-text-field
+                :label="parts.id"
+                :placeholder="parts.placeholder"
+                variant="outlined"
+                class="input-outline"
+              ></v-text-field>
+            </v-card-item>
+            <v-list-item
+              v-if="parts.tag == 'list' || parts.tag == 'list-title'"
+            >
+              <v-list-item-subtitle v-for="list in parts.list">
+                {{ list }}
+              </v-list-item-subtitle>
+            </v-list-item>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -85,9 +120,25 @@ import {
 // Logo
 import logo from "../assets/logo.svg";
 import { db } from "../firebase/firebase";
+import { useDisplay } from "vuetify";
 
 export default defineComponent({
   name: "Home",
+  computed: {
+    card_width() {
+      if (useDisplay().xl.value) {
+        return 1200;
+      } else if (useDisplay().lg.value) {
+        return 1000;
+      } else if (useDisplay().md.value) {
+        return 800;
+      } else if (useDisplay().sm.value) {
+        return 600;
+      } else {
+        return 300;
+      }
+    },
+  },
   created() {
     this.getQuestion();
   },
@@ -98,7 +149,8 @@ export default defineComponent({
         console.log(`${doc.id} => ${doc.data()}`);
         console.dir(doc.data());
       });
-      this.questions = querySnapshot;
+      this.questions = querySnapshot.docs.map((doc) => doc.data());
+      console.dir(this.questions);
     },
   },
   data() {
@@ -155,3 +207,10 @@ export default defineComponent({
   },
 });
 </script>
+<style lang="scss">
+.input {
+  &-outline {
+    padding-top: 5px;
+  }
+}
+</style>
