@@ -35,6 +35,7 @@
               v-if="parts.tag == 'list' || parts.tag == 'list-title'"
             >
               <v-list-item-subtitle v-for="list in parts.list">
+                <v-icon> mdi-chevron-triple-right </v-icon>
                 {{ list }}
               </v-list-item-subtitle>
             </v-list-item>
